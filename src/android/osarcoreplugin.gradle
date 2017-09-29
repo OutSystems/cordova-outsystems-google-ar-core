@@ -1,0 +1,20 @@
+repositories{    
+  jcenter()
+  flatDir{
+      dirs 'libs'
+   }
+}
+
+dependencies {
+    compile (name: 'arcore_client', ext: 'aar')
+    compile (name: 'obj-0.2.1', ext: 'jar')
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
+}
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
+}

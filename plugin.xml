@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.outsystems.ar.core"
+        version="0.0.1">
+
+    <name>OSARCore</name>
+    <description>OutSystems Template for Cordova Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,outsystems,google,ar,core</keywords>
+
+    <!-- js -->
+    <js-module name="OSARCorePlugin" src="www/OSARCorePlugin.js">
+    	<clobbers target="OSARCorePlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="OSARCorePlugin">
+                <param name="android-package" value="com.google.ar.core.examples.java.helloar.OSARCorePlugin"/>
+				<param name="onload" value="true" />
+            </feature>
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="com.google.ar.core.examples.java.helloar.HelloArActivity" android:parentActivityName="org.apache.cordova.CordovaActivity" android:theme="@style/Theme.AppCompat" />
+        </config-file>
+		
+        <!-- Sources files -->
+		<source-file src="src/android/com/google/ar/core/examples/java/helloar/OSARCorePlugin.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/CameraPermissionHelper.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/HelloArActivity.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/package-info.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/BackgroundRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/ObjectRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/PlaneAttachment.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/PlaneRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/PointCloudRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/ShaderUtil.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/package-info.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+		
+		<!-- Copy libraries -->
+        <resource-file src="src/android/libs/arcore_client.aar" target="libs/arcore_client.aar" />
+        <resource-file src="src/android/libs/obj-0.2.1.jar" target="libs/obj-0.2.1.jar" />
+
+        <!-- Gradle script -->
+        <framework src="src/android/osarcoreplugin.gradle" custom="true" type="gradleReference"/>
+        <framework src="com.android.support:appcompat-v7:+"/>
+		
+		<!-- Copy Resources -->
+		<resource-file src="res/layout/activity_main.xml" target="res/layout/activity_main.xml" />
+		<resource-file src="res/raw/light_vertex.shader" target="res/raw/light_vertex.shader" />
+		<resource-file src="res/raw/object_fragment.shader" target="res/raw/object_fragment.shader" />
+		<resource-file src="res/raw/object_vertex.shader" target="res/raw/object_vertex.shader" />
+		<resource-file src="res/raw/passthrough_fragment.shader" target="res/raw/passthrough_fragment.shader" />
+		<resource-file src="res/raw/plane_fragment.shader" target="res/raw/plane_fragment.shader" />
+		<resource-file src="res/raw/plane_vertex.shader" target="res/raw/plane_vertex.shader" />
+		<resource-file src="res/raw/point_cloud_vertex.shader" target="res/raw/point_cloud_vertex.shader" />
+		<resource-file src="res/raw/screenquad_fragment_oes.shader" target="res/raw/screenquad_fragment_oes.shader" />
+		<resource-file src="res/raw/screenquad_vertex.shader" target="res/raw/screenquad_vertex.shader" />
+		
+		<!-- Hooks -->
+		<hook type="before_build" src="src/android/hooks/copyAssets.js" />
+    </platform>
+
+
+</plugin>
