@@ -6,20 +6,19 @@
 
     <name>OSARCore</name>
     <description>OutSystems Template for Cordova Plugin</description>
-    <license>Apache 2.0</license>
     <keywords>cordova,outsystems,google,ar,core</keywords>
 
     <!-- js -->
-    <js-module name="OSARCorePlugin" src="www/OSARCorePlugin.js">
-        <clobbers target="OSARCorePlugin" />
+    <js-module name="OSARCore" src="www/OSARCore.js">
+        <clobbers target="OSARCore" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
 
         <config-file target="config.xml" parent="/*">
-            <feature name="OSARCorePlugin">
-                <param name="android-package" value="com.google.ar.core.examples.java.helloar.OSARCorePlugin"/>
+            <feature name="OSARCore">
+                <param name="android-package" value="com.outsystems.ar.core.OSARCorePlugin"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -29,21 +28,20 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="com.google.ar.core.examples.java.helloar.HelloArActivity" android:parentActivityName="org.apache.cordova.CordovaActivity" android:theme="@style/Theme.AppCompat" />
+            <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="com.outsystems.ar.core.HelloArActivity" android:parentActivityName="org.apache.cordova.CordovaActivity" android:theme="@style/Theme.AppCompat" />
         </config-file>
 
         <!-- Sources files -->
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/OSARCorePlugin.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/CameraPermissionHelper.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/HelloArActivity.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/package-info.java" target-dir="src/com/google/ar/core/examples/java/helloar" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/BackgroundRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/ObjectRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/PlaneAttachment.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/PlaneRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/PointCloudRenderer.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/ShaderUtil.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
-        <source-file src="src/android/com/google/ar/core/examples/java/helloar/rendering/package-info.java" target-dir="src/com/google/ar/core/examples/java/helloar/rendering" />
+        <source-file src="src/android/OSARCorePlugin.java" target-dir="src/com/outsystems/ar/core/" />
+        <source-file src="src/android/CameraPermissionHelper.java" target-dir="src/com/outsystems/ar/core/" />
+        <source-file src="src/android/HelloArActivity.java" target-dir="src/com/outsystems/ar/core/" />
+
+        <source-file src="src/android/rendering/BackgroundRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
+        <source-file src="src/android/rendering/ObjectRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
+        <source-file src="src/android/rendering/PlaneAttachment.java" target-dir="src/com/outsystems/ar/core/rendering" />
+        <source-file src="src/android/rendering/PlaneRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
+        <source-file src="src/android/rendering/PointCloudRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
+        <source-file src="src/android/rendering/ShaderUtil.java" target-dir="src/com/outsystems/ar/core/rendering" />
 
         <!-- Copy libraries -->
         <resource-file src="src/android/libs/arcore_client.aar" target="libs/arcore_client.aar" />

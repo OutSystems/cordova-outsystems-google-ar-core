@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ar.core.examples.java.helloar;
+package com.outsystems.ar.core;
 
 import com.google.ar.core.Config;
 import com.google.ar.core.Frame;
@@ -23,12 +23,12 @@ import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.core.PlaneHitResult;
 import com.google.ar.core.Session;
-import com.google.ar.core.examples.java.helloar.rendering.BackgroundRenderer;
-import com.google.ar.core.examples.java.helloar.rendering.ObjectRenderer;
-import com.google.ar.core.examples.java.helloar.rendering.ObjectRenderer.BlendMode;
-import com.google.ar.core.examples.java.helloar.rendering.PlaneAttachment;
-import com.google.ar.core.examples.java.helloar.rendering.PlaneRenderer;
-import com.google.ar.core.examples.java.helloar.rendering.PointCloudRenderer;
+import com.outsystems.ar.core.rendering.BackgroundRenderer;
+import com.outsystems.ar.core.rendering.ObjectRenderer;
+import com.outsystems.ar.core.rendering.ObjectRenderer.BlendMode;
+import com.outsystems.ar.core.rendering.PlaneAttachment;
+import com.outsystems.ar.core.rendering.PlaneRenderer;
+import com.outsystems.ar.core.rendering.PointCloudRenderer;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;

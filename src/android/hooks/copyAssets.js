@@ -19,7 +19,7 @@ module.exports = function(ctx) {
 	  var src_asset = path.join(plugin_assets_dir, assets_files[i]);
 	  var dest_asset = path.join(project_root_dir, "platforms/android/assets", assets_files[i]);
 	  
-      fs.createReadStream(src_asset).pipe(fs.createWriteStream(dest_asset));
+    fs.createReadStream(src_asset).pipe(fs.createWriteStream(dest_asset));
   }
 
   console.error("Copy assets: Finished with success");

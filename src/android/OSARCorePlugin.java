@@ -1,4 +1,4 @@
-package com.google.ar.core.examples.java.helloar;
+package com.outsystems.ar.core;
 
 import android.content.Context;
 import android.content.Intent;
