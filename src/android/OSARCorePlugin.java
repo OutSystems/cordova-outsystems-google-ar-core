@@ -13,7 +13,7 @@ public class OSARCorePlugin extends CordovaPlugin {
 
 	@Override
 	protected void pluginInitialize() {
-		ctx = cordova.getActivity().getBaseContext();
+		ctx = cordova.getActivity().getApplicationContext();
   	}
 
 	@Override

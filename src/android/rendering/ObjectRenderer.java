@@ -14,14 +14,17 @@
  */
 package com.outsystems.ar.core.rendering;
 
-import com.outsystems.ar.core.R;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.opengl.Matrix;
+import com.outsystems.ar.core.R;
+import de.javagl.obj.Obj;
+import de.javagl.obj.ObjData;
+import de.javagl.obj.ObjReader;
+import de.javagl.obj.ObjUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -29,10 +32,6 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
-import de.javagl.Obj;
-import de.javagl.ObjData;
-import de.javagl.ObjReader;
-import de.javagl.ObjUtils;
 
 /**
  * Renders an object loaded from an OBJ file in OpenGL.
@@ -50,12 +49,12 @@ public class ObjectRenderer {
         Shadow,
         /** Normal alpha blending. */
         Grid
-    };
+    }
 
     private static final int COORDS_PER_VERTEX = 3;
 
     // Note: the last component must be zero to avoid applying the translational part of the matrix.
-    private static final float[] LIGHT_DIRECTION = new float[] { 0.0f, 1.0f, 0.0f, 0.0f };
+    private static final float[] LIGHT_DIRECTION = new float[] { 0.250f, 0.866f, 0.433f, 0.0f };
     private float[] mViewLightDirection = new float[4];
 
     // Object vertex buffer variables.
@@ -359,7 +358,7 @@ public class ObjectRenderer {
         ShaderUtil.checkGLError(TAG, "After draw");
     }
 
-    public static void normalizeVec3(float[] v) {
+    private static void normalizeVec3(float[] v) {
         float reciprocalLength = 1.0f / (float) Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
         v[0] *= reciprocalLength;
         v[1] *= reciprocalLength;

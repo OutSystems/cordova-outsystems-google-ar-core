@@ -33,19 +33,20 @@
 
         <!-- Sources files -->
         <source-file src="src/android/OSARCorePlugin.java" target-dir="src/com/outsystems/ar/core/" />
-        <source-file src="src/android/CameraPermissionHelper.java" target-dir="src/com/outsystems/ar/core/" />
         <source-file src="src/android/HelloArActivity.java" target-dir="src/com/outsystems/ar/core/" />
+		
+		<source-file src="src/android/CameraPermissionHelper.java" target-dir="src/com/outsystems/ar/core/" />
+		<source-file src="src/android/DisplayRotationHelper.java" target-dir="src/com/outsystems/ar/core/" />
 
         <source-file src="src/android/rendering/BackgroundRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
         <source-file src="src/android/rendering/ObjectRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
-        <source-file src="src/android/rendering/PlaneAttachment.java" target-dir="src/com/outsystems/ar/core/rendering" />
         <source-file src="src/android/rendering/PlaneRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
         <source-file src="src/android/rendering/PointCloudRenderer.java" target-dir="src/com/outsystems/ar/core/rendering" />
         <source-file src="src/android/rendering/ShaderUtil.java" target-dir="src/com/outsystems/ar/core/rendering" />
 
         <!-- Copy libraries -->
-        <resource-file src="src/android/libs/arcore_client.aar" target="libs/arcore_client.aar" />
-        <resource-file src="src/android/libs/obj-0.2.1.jar" target="libs/obj-0.2.1.jar" />
+        <resource-file src="src/android/libs/core-0.91.0.aar" target="libs/core-0.91.0.aar" />
+		<resource-file src="src/android/libs/core-0.91.0.pom" target="libs/core-0.91.0.pom" />
 
         <!-- Gradle script -->
         <framework src="src/android/osarcoreplugin.gradle" custom="true" type="gradleReference"/>
@@ -53,7 +54,6 @@
 
         <!-- Copy Resources -->
         <resource-file src="res/layout/activity_main.xml" target="res/layout/activity_main.xml" />
-        <resource-file src="res/raw/light_vertex.shader" target="res/raw/light_vertex.shader" />
         <resource-file src="res/raw/object_fragment.shader" target="res/raw/object_fragment.shader" />
         <resource-file src="res/raw/object_vertex.shader" target="res/raw/object_vertex.shader" />
         <resource-file src="res/raw/passthrough_fragment.shader" target="res/raw/passthrough_fragment.shader" />
