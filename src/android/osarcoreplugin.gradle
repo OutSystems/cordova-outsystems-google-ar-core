@@ -1,4 +1,4 @@
-cdvCompileSdkVersion = 26
+cdvCompileSdkVersion = 27
 
 repositories{
   jcenter()
