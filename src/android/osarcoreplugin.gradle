@@ -12,8 +12,7 @@ repositories{
 }
 
 dependencies {
-    compile (name: 'core-0.91.0', ext: 'aar')
-    compile (name: 'core-0.91.0', ext: 'pom')
+    compile (name: 'core-1.3.0', ext: 'aar')
     compile 'de.javagl:obj:0.2.1'
     compile 'com.android.support:appcompat-v7:27.0.2'
     compile 'com.android.support:design:27.0.2'
