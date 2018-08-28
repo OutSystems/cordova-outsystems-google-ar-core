@@ -45,8 +45,8 @@
         <source-file src="src/android/rendering/ShaderUtil.java" target-dir="src/com/outsystems/ar/core/rendering" />
 
         <!-- Copy libraries -->
-        <resource-file src="src/android/libs/core-0.91.0.aar" target="libs/core-0.91.0.aar" />
-	<resource-file src="src/android/libs/core-0.91.0.pom" target="libs/core-0.91.0.pom" />
+        <resource-file src="src/android/libs/core-1.3.0.aar" target="libs/core-1.3.0.aar" />
+	<!-- <resource-file src="src/android/libs/core-0.91.0.pom" target="libs/core-0.91.0.pom" /> -->
 
         <!-- Gradle script -->
         <framework src="src/android/osarcoreplugin.gradle" custom="true" type="gradleReference"/>
