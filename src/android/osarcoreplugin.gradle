@@ -15,8 +15,8 @@ dependencies {
     compile (name: 'core-0.91.0', ext: 'aar')
     compile (name: 'core-0.91.0', ext: 'pom')
     compile 'de.javagl:obj:0.2.1'
-    compile 'com.android.support:appcompat-v7:+'
-    compile 'com.android.support:design:+'
+    compile 'com.android.support:appcompat-v7:26+'
+    compile 'com.android.support:design:26+'
 }
 
 android {
